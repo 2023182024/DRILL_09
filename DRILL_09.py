@@ -42,9 +42,13 @@ while running:
     tuk_ground.draw(TUK_WIDTH//2,TUK_HEIGHT//2)
         
     if(dirx==-1):
-        character.clip_composite_draw(frame*100,100 * 1,100,100,0,'h',x,90)
+        character.clip_composite_draw(frame*100,100 * 1,100,100,0,'h',x,y)
+    elif(diry==1):
+        character.clip_composite_draw(frame*100,100 * 1,100,100,90,'',x,y)
+    elif(diry==-1):
+        character.clip_composite_draw(frame*100,100 * 1,100,100,-90,'',x,y)
     else:
-        character.clip_draw(frame * 100, 100 * 1, 100, 100, x, 90)
+        character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
 
     update_canvas()
     handle_events()
