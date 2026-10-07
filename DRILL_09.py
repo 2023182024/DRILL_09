@@ -21,8 +21,7 @@ def handle_events():
         if event.type == SDL_QUIT:
             running = False
         elif event.type==SDL_KEYDOWN:
-            dirx=0
-            diry=0
+
             if event.key==SDLK_RIGHT:
                 dirx=1
             elif event.key==SDLK_LEFT:
@@ -41,8 +40,12 @@ while running:
     clear_canvas()
     
     tuk_ground.draw(TUK_WIDTH//2,TUK_HEIGHT//2)
-    character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
-    
+        
+    if(dirx==-1):
+        character.clip_composite_draw(frame*100,100 * 1,100,100,0,'h',x,90)
+    else:
+        character.clip_draw(frame * 100, 100 * 1, 100, 100, x, 90)
+
     update_canvas()
     handle_events()
     if(x>0 and x<TUK_WIDTH):
