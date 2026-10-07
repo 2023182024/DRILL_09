@@ -6,8 +6,11 @@ tuk_ground=load_image('TUK_GROUND.png')
 character = load_image('animation_sheet.png')
 
 running=True
+x,y=TUK_WIDTH//2,TUK_HEIGHT//2
+frame=0
 
 def handle_events():
+
     pass
 
 
@@ -23,5 +26,4 @@ while running:
     frame = (frame + 1) % 8
     delay(0.05)
     
-    close_canvas()
     pass
