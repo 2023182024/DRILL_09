@@ -8,6 +8,7 @@ character = load_image('animation_sheet.png')
 running=True
 x,y=TUK_WIDTH//2,TUK_HEIGHT//2
 frame=0
+dir=0
 
 def handle_events():
     global running
@@ -33,6 +34,10 @@ while running:
     
     update_canvas()
     handle_events()
+    if(x>0 and x<TUK_WIDTH):
+        x+=dir*5
+    if(y>0 and y<TUK_HEIGHT):
+        y+=dir*5
     frame = (frame + 1) % 8
     delay(0.05)
     
