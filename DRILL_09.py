@@ -27,6 +27,8 @@ def handle_events():
         if event.type == SDL_QUIT:
             running = False
         elif event.type == SDL_KEYDOWN:
+            dirx=0
+            diry=0
             if event.key == SDLK_RIGHT:
                 dirx = 1
             elif event.key == SDLK_LEFT:
