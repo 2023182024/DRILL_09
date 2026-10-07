@@ -10,8 +10,18 @@ x,y=TUK_WIDTH//2,TUK_HEIGHT//2
 frame=0
 
 def handle_events():
+    global running
+    global x,y
+    
+    events = get_events()
 
-    pass
+    for event in events:
+        if event.type == SDL_QUIT:
+            running = False
+        elif event.type==SDL_KEYDOWN:
+            if event.key==SDLK_ESCAPE:
+                running=False
+    pass    
 
 
 while running:
